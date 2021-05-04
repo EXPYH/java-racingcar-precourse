@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Scanner;
 
 import car.Car;
-import car.engine.CarEngine;
 import car.CarList;
 import car.CarName;
 import car.Distance;
+import car.engine.CarEngine;
 
 public class RacingRunner {
 
@@ -18,11 +18,11 @@ public class RacingRunner {
 
 	public String getResultMessage(CarList carList) {
 		StringBuilder str = new StringBuilder();
-		for (Car winner : carList.getWinners()){
+		for (Car winner : carList.getWinners()) {
 			str.append(winner.getCarNameStr());
 			str.append(", ");
 		}
-		str.setLength(str.length()-2);
+		str.setLength(str.length() - 2);
 		str.append("가 최종 우승했습니다.");
 		return str.toString();
 	}
@@ -39,11 +39,10 @@ public class RacingRunner {
 		carList.printCurrentDistances();
 	}
 
-
 	private int getMoveCount() {
 		System.out.println("시도할 횟수는 몇회인가요?");
 		String moveCountInputStr = scan.nextLine();
-		while (!inputValidator.isValidCount(moveCountInputStr)){
+		while (!inputValidator.isValidCount(moveCountInputStr)) {
 			System.out.println("잘못된 입력입니다.");
 			System.out.println("시도할 횟수는 몇회인가요?");
 			moveCountInputStr = scan.nextLine();
@@ -54,7 +53,7 @@ public class RacingRunner {
 	public CarList registerCarList() {
 		System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉽표(,) 기준으로 구분)");
 		List<String> carInputStr = getCarInputStr(scan.nextLine());
-		while(!inputValidator.isValidCarNamesInput(carInputStr)){
+		while (!inputValidator.isValidCarNamesInput(carInputStr)) {
 			System.out.println("잘못된 입력입니다. 5글자 이하의 이름을 입력하세요.");
 			System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉽표(,) 기준으로 구분)");
 			carInputStr = getCarInputStr(scan.nextLine());
@@ -64,7 +63,7 @@ public class RacingRunner {
 
 	private CarList makeCarListFromStrings(List<String> carInputStr) {
 		List<Car> cars = new ArrayList<>();
-		for (String carNameStr : carInputStr){
+		for (String carNameStr : carInputStr) {
 			cars.add(new Car(new CarName(carNameStr), new Distance(0)));
 		}
 		return new CarList(cars);

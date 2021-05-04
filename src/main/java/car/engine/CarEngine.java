@@ -3,7 +3,7 @@ package car.engine;
 import java.util.Random;
 
 public class CarEngine {
-	private final Random rand ;
+	private final Random rand;
 	private Bound bound;
 	private Criteria criteria;
 
@@ -13,11 +13,11 @@ public class CarEngine {
 		this.criteria = criteria;
 	}
 
-	private int generateNumber(){
+	private int generateNumber() {
 		return rand.nextInt(bound.getValue());
 	}
 
-	public boolean isSuccessToRun(){
+	public boolean isSuccessToRun() {
 		return generateNumber() >= criteria.getValue();
 	}
 }

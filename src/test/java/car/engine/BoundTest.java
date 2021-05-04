@@ -8,7 +8,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 class BoundTest {
 	@ParameterizedTest
 	@ValueSource(ints = {-1, 0, -999})
-	void criteria_NonPositiveArgument_ThrowIllegalArgumentException(int input){
-		assertThatIllegalArgumentException().isThrownBy(()->{new Criteria(input);});
+	void criteria_NonPositiveArgument_ThrowIllegalArgumentException(int input) {
+		assertThatIllegalArgumentException().isThrownBy(() -> {
+			new Criteria(input);
+		});
 	}
 }

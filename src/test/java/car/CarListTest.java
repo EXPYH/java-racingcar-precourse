@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Test;
 
 class CarListTest {
 	@Test
-	void getWinners_JointFirst_ReturnMultipleCar(){
+	void getWinners_JointFirst_ReturnMultipleCar() {
 		Car henry = new Car(new CarName("Henry"), new Distance(10));
-		Car jerry = new Car(new CarName("Jerry"), new Distance(8));;
+		Car jerry = new Car(new CarName("Jerry"), new Distance(8));
 		Car marry = new Car(new CarName("Mary"), new Distance(10));
 		List<Car> cars = new ArrayList<>(Arrays.asList(henry, jerry, marry));
 		List<Car> expected = new ArrayList<>(Arrays.asList(henry, marry));
@@ -20,9 +20,9 @@ class CarListTest {
 	}
 
 	@Test
-	void getWinners_OnlyOneFirst_ReturnMultipleCar(){
+	void getWinners_OnlyOneFirst_ReturnMultipleCar() {
 		Car henry = new Car(new CarName("Henry"), new Distance(10));
-		Car jerry = new Car(new CarName("Jerry"), new Distance(12));;
+		Car jerry = new Car(new CarName("Jerry"), new Distance(12));
 		Car marry = new Car(new CarName("Mary"), new Distance(10));
 		List<Car> cars = new ArrayList<>(Arrays.asList(henry, jerry, marry));
 		List<Car> expected = new ArrayList<>(Arrays.asList(jerry));

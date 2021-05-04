@@ -28,7 +28,7 @@ public class Car implements Comparable<Car> {
 	}
 
 	public void moveOneStepForward(CarEngine carEngine) {
-		if (carEngine.isSuccessToRun()){
+		if (carEngine.isSuccessToRun()) {
 			this.getDistance().increaseDistance(1);
 		}
 	}

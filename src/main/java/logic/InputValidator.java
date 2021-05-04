@@ -9,16 +9,16 @@ public class InputValidator {
 		try {
 			String maxLenStr = Collections.max(input, String::compareTo);
 			String minLenStr = Collections.min(input, String::compareTo);
-			return !minLenStr.isEmpty() && maxLenStr.length()<=5;
-		} catch (NoSuchElementException e){
+			return !minLenStr.isEmpty() && maxLenStr.length() <= 5;
+		} catch (NoSuchElementException e) {
 			return false;
 		}
 	}
 
 	public boolean isValidCount(String input) {
-		try{
+		try {
 			return Integer.parseInt(input) > 0;
-		} catch(NumberFormatException e){
+		} catch (NumberFormatException e) {
 			return false;
 		}
 	}

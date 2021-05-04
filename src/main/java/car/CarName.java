@@ -4,7 +4,7 @@ public class CarName {
 	private String value;
 
 	public CarName(String value) {
-		if (value.isEmpty() || value.length() > 5){
+		if (value.isEmpty() || value.length() > 5) {
 			throw new IllegalArgumentException();
 		}
 		this.value = value;

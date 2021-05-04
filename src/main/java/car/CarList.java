@@ -12,18 +12,18 @@ public class CarList {
 		this.cars = cars;
 	}
 
-	public List<Car> getCars(){
+	public List<Car> getCars() {
 		return cars;
 	}
 
-	public List<Car> getWinners(){
+	public List<Car> getWinners() {
 		int maxDistance = Collections.max(cars).getDistance().getValue();
 		cars.removeIf(car -> car.getDistance().getValue() < maxDistance);
 		return cars;
 	}
 
-	public void moveCars(CarEngine carEngine){
-		for (Car car : cars){
+	public void moveCars(CarEngine carEngine) {
+		for (Car car : cars) {
 			car.moveOneStepForward(carEngine);
 		}
 	}

@@ -4,7 +4,7 @@ public class Distance {
 	private int value;
 
 	public Distance(int value) {
-		if (value < 0){
+		if (value < 0) {
 			throw new IllegalArgumentException();
 		}
 		this.value = value;
@@ -16,7 +16,7 @@ public class Distance {
 
 	public String getCurrentDistanceStr() {
 		StringBuilder distanceBuffer = new StringBuilder();
-		for (int i = 0; i < this.value; ++i){
+		for (int i = 0; i < this.value; ++i) {
 			distanceBuffer.append("-");
 		}
 		return distanceBuffer.toString();

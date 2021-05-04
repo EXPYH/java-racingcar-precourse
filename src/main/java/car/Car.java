@@ -1,5 +1,7 @@
 package car;
 
+import car.engine.CarEngine;
+
 public class Car implements Comparable<Car> {
 	private CarName carName;
 	private Distance distance;
@@ -23,6 +25,12 @@ public class Car implements Comparable<Car> {
 
 	public String getCarNameStr() {
 		return carName.getValue();
+	}
+
+	public void moveOneStepForward(CarEngine carEngine) {
+		if (carEngine.isSuccessToRun()){
+			this.getDistance().increaseDistance(1);
+		}
 	}
 
 	@Override

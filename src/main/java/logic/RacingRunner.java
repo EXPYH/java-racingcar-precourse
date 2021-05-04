@@ -41,16 +41,22 @@ public class RacingRunner {
 
 
 	private int getMoveCount() {
+		System.out.println("시도할 횟수는 몇회인가요?");
 		String moveCountInputStr = scan.nextLine();
 		while (!inputValidator.isValidCount(moveCountInputStr)){
+			System.out.println("잘못된 입력입니다.");
+			System.out.println("시도할 횟수는 몇회인가요?");
 			moveCountInputStr = scan.nextLine();
 		}
 		return Integer.parseInt(moveCountInputStr);
 	}
 
 	public CarList registerCarList() {
+		System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉽표(,) 기준으로 구분)");
 		List<String> carInputStr = getCarInputStr(scan.nextLine());
 		while(!inputValidator.isValidCarNamesInput(carInputStr)){
+			System.out.println("잘못된 입력입니다. 5글자 이하의 이름을 입력하세요.");
+			System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉽표(,) 기준으로 구분)");
 			carInputStr = getCarInputStr(scan.nextLine());
 		}
 		return makeCarListFromStrings(carInputStr);

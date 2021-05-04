@@ -2,12 +2,17 @@ package logic;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class InputValidator {
 	public boolean isValidCarNamesInput(List<String> input) {
-		String maxLenStr = Collections.max(input, String::compareTo);
-		String minLenStr = Collections.min(input, String::compareTo);
-		return !minLenStr.isEmpty() && maxLenStr.length()<=5;
+		try {
+			String maxLenStr = Collections.max(input, String::compareTo);
+			String minLenStr = Collections.min(input, String::compareTo);
+			return !minLenStr.isEmpty() && maxLenStr.length()<=5;
+		} catch (NoSuchElementException e){
+			return false;
+		}
 	}
 
 	public boolean isValidCount(String input) {

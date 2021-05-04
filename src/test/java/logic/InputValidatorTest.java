@@ -39,6 +39,12 @@ class InputValidatorTest {
 		assertThat(inputValidator.isValidCarNamesInput(cars)).isTrue();
 	}
 
+	@Test
+	void isValidCarNamesInput_DuplicateInput_False() {
+		List<String> cars = new ArrayList<>(Arrays.asList("James", "Henry", "James"));
+		assertThat(inputValidator.isValidCarNamesInput(cars)).isFalse();
+	}
+
 	@ParameterizedTest
 	@ValueSource(strings = {"three", "2hundreds", "1,000,000", "0", "-1"})
 	void isValidCount_NonIntegerInput_False() {

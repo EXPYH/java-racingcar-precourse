@@ -1,10 +1,11 @@
 package car;
 
 import car.engine.CarEngine;
+import constants.RacingConst;
 
 public class Car implements Comparable<Car> {
-	private CarName carName;
-	private Distance distance;
+	private final CarName carName;
+	private final Distance distance;
 
 	public Car(CarName carName, Distance distance) {
 		this.carName = carName;
@@ -29,7 +30,7 @@ public class Car implements Comparable<Car> {
 
 	public void moveOneStepForward(CarEngine carEngine) {
 		if (carEngine.isSuccessToRun()) {
-			this.getDistance().increaseDistance(1);
+			this.getDistance().increaseDistance(RacingConst.ONESTEP);
 		}
 	}
 

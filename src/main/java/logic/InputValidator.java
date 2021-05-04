@@ -1,5 +1,7 @@
 package logic;
 
+import static constants.RacingConst.*;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -9,7 +11,7 @@ public class InputValidator {
 		try {
 			String maxLenStr = Collections.max(input, String::compareTo);
 			String minLenStr = Collections.min(input, String::compareTo);
-			return !minLenStr.isEmpty() && maxLenStr.length() <= 5;
+			return !minLenStr.isEmpty() && maxLenStr.length() <= NAME_MAX_LENGTH;
 		} catch (NoSuchElementException e) {
 			return false;
 		}

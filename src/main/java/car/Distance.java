@@ -1,5 +1,7 @@
 package car;
 
+import constants.RacingConst;
+
 public class Distance {
 	private int value;
 
@@ -17,7 +19,7 @@ public class Distance {
 	public String getCurrentDistanceStr() {
 		StringBuilder distanceBuffer = new StringBuilder();
 		for (int i = 0; i < this.value; ++i) {
-			distanceBuffer.append("-");
+			distanceBuffer.append(RacingConst.TRAIL_STRING);
 		}
 		return distanceBuffer.toString();
 	}

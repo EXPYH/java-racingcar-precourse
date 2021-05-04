@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class CarEngine {
 	private final Random rand;
-	private Bound bound;
-	private Criteria criteria;
+	private final Bound bound;
+	private final Criteria criteria;
 
 	public CarEngine(Bound bound, Criteria criteria) {
 		this.rand = new Random();

@@ -10,6 +10,7 @@ import car.CarList;
 import car.CarName;
 import car.Distance;
 import car.engine.CarEngine;
+import constants.RacingConst;
 
 public class RacingRunner {
 
@@ -64,7 +65,7 @@ public class RacingRunner {
 	private CarList makeCarListFromStrings(List<String> carInputStr) {
 		List<Car> cars = new ArrayList<>();
 		for (String carNameStr : carInputStr) {
-			cars.add(new Car(new CarName(carNameStr), new Distance(0)));
+			cars.add(new Car(new CarName(carNameStr), new Distance(RacingConst.STARTING_DISTANCE)));
 		}
 		return new CarList(cars);
 	}
